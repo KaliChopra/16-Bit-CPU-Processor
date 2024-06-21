@@ -1,4 +1,4 @@
-# **16 Bit MIPS32 PROCESSOR**
+∩╗┐# **16 Bit MIPS32 PROCESSOR**
 Skills: Verilog HDL, Computer Architecture
 
 - I am Kali Chopra pursuing Electronics Engineering at IIT (BHU), Varanasi.S
