@@ -3,8 +3,8 @@ Skills: Verilog HDL, Computer Architecture
 
 - I am Kali Chopra pursuing Electronics Engineering at IIT (BHU), Varanasi.S
 - I have made a 16-bit CPU using Verilog HDL.
-- The verilog files along with testbench are attached in this repository.
-- The block diagram of design is as follows:
+- The Verilog files along with testbench are attached to this repository.
+- The block diagram of the design is as follows:
 
   ![](Aspose.Words.3b51a1bc-1357-40d0-80fd-d2b331fc6f02.001.png)
 
@@ -18,10 +18,10 @@ Implementation of MIPS32 architecture
 - MIPS32 has a set of 32 general-purpose registers.  Each register is of 32 bits.  
 - Register R0 always contains the constant value 0.
 - The PC is a special-purpose 32-bit register.
-- MIPS32 does not have flag registers (such as zero, carry, sign flags)
+- MIPS32 does not have flag registers (such as zero, carry, or sign flags)
 ## **Instruction Code**
 ## There are 2 types of instruction codes:
-1. R-Type (Register): The instruction bits are divided into 6 parts out of which we are not using 2 of them that is shift amount and opcode extension.
+1. R-Type (Register): The instruction bits are divided into 6 parts out of which we are not using 2 of them: shift amount and opcode extension.
 
 ![](Aspose.Words.3b51a1bc-1357-40d0-80fd-d2b331fc6f02.003.png)
 
@@ -30,7 +30,7 @@ Implementation of MIPS32 architecture
 
   ![](Aspose.Words.3b51a1bc-1357-40d0-80fd-d2b331fc6f02.004.png)
 
-1. The next 10 bits represent the Address of the memory that is needed in the instruction.
+1. The next 10 bits represent the Address of the memory needed in the instruction.
 1. I-Type (Immediate): The instruction bits are divided into 6 parts.
 
 ![](Aspose.Words.3b51a1bc-1357-40d0-80fd-d2b331fc6f02.005.png)
@@ -44,8 +44,8 @@ Implementation of MIPS32 architecture
 
 (a) IF: Instruction Fetch
 
-- Here the instruction pointed to by PC is fetched from memory, and also the next value of PC is computed.
-- For a branch instruction, new value of the PC may be the target address. So PC is not updated in this stage; new value is stored in a register NPC.
+- Here the instruction pointed to by the PC is fetched from memory, and also the next value of the PC is computed.
+- For a branch instruction, the new PC value may be the target address. So PC is not updated in this stage; a new value is stored in a register NPC.
 
 (b) ID : Instruction Decode
 
@@ -55,7 +55,7 @@ Implementation of MIPS32 architecture
 
 (c) EX: Execution / Effective Address Computation
 
-- In this step, the ALU is used to perform some calculation.
+- In this step, the ALU is used to perform some calculations.
 - The exact operation depends on the instruction that is already decoded.
 - ` `The ALU processes operands that have been prepared in the previous cycle (A, B, Imm, etc).
 
@@ -64,15 +64,15 @@ Implementation of MIPS32 architecture
 
 - The only instructions that make use of this step are loads, stores, and branches.
 - The load and store instructions access the memory.
-- The branch instruction updates PC depending upon the outcome of the branch condition.
+- The branch instruction updates the PC depending upon the outcome of the branch condition.
 
 (e) WB: Register Write Back
 
 - In this step, the result is written back into the register file.
-- Result may come from the ALU or memory system (viz. a LOAD instruction).
+- The result may come from the ALU or memory system (viz. a LOAD instruction).
 - The position of the destination register in the instruction word depends on the instruction already known after decoding has been done.
 
-**Input and Output**
+##**Input and Output**
 
 - The Instructions are given in the file Program.txt and the Data is given in the file Data.txt. As soon as we run the CPU\_tb.v file the instructions and data are loaded into their respective segments of memory.
 - The output is written in the file Memory\_output.txt.
